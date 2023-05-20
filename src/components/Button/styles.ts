@@ -1,0 +1,72 @@
+import styled, { css } from 'styled-components'
+
+import { E_ButtonMod, E_ButtonSize } from '.'
+
+import { T_StyledVariants } from 'models/styled'
+
+interface ButtonProps {
+  $mod: E_ButtonMod
+  $size: E_ButtonSize
+  disabled: boolean
+}
+
+export const Button = styled.button<ButtonProps>`
+  cursor: pointer;
+  user-select: none;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 0 32px;
+
+  border-radius: 30px;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+
+  background: ${({ theme }) => theme.palette.white};
+  border: none;
+
+  transition: 0.25s color ease, 0.25s background-color ease;
+
+  ${({ $size }) => sizes[$size]};
+
+  ${({ theme, $mod }) => {
+    switch ($mod) {
+      case E_ButtonMod.primary:
+        return css`
+          color: ${theme.palette.white};
+          background-color: ${theme.palette.primary};
+        `
+      case E_ButtonMod.outline:
+        return css`
+          box-shadow: rgb(0 0 0 / 50%) 0 3px 7px -3px, 0 6px 0 0 ${theme.palette.white};
+        `
+
+      case E_ButtonMod.text:
+        return css`
+          background: transparent;
+        `
+    }
+  }};
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+`
+
+const sizes: T_StyledVariants<E_ButtonSize> = {
+  regular: css`
+    height: 60px;
+  `,
+  small: css`
+    height: 50px;
+  `,
+}
