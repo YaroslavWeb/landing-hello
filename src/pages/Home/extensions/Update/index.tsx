@@ -1,18 +1,39 @@
 /* eslint-disable react/no-unescaped-entities */
+import * as S from './styles'
+
+import MediaDots from 'assets/icons/decorations/develop/dots.svg'
+import MediaGreenEllipse from 'assets/icons/decorations/develop/green_ellipse.svg'
+import MediaOrangeEllipse from 'assets/icons/decorations/develop/orange_ellipse.svg'
+import mediaUpdate from 'assets/images/update.png'
 import { Button } from 'components/Button'
+import * as C from 'styles/components'
 
 export const Update = () => {
   return (
-    <section>
-      <div>
-        <h2>Update</h2>
-        <span>
+    <S.SectionWrapper>
+      <C.Container max={513}>
+        <C.H2 align='start'>Update</C.H2>
+        <C.Divider height={30} />
+        <C.Description align='start' fontSize={20}>
           Develop for all your users' devices with just one codebase. Add fast refresh, true native
           capabilities, and your creativity, and you'll have the app your users want in no time.
-        </span>
-        <Button>Learn more about spellon</Button>
-      </div>
-      <img alt='update' />
-    </section>
+        </C.Description>
+        <C.Divider height={40} />
+        <Button mod={Button.mod.text}>Learn more about spellon</Button>
+      </C.Container>
+      <S.ImageWrapper>
+        <img src={mediaUpdate} alt='update' />
+        <S.Dots>
+          <MediaDots />
+        </S.Dots>
+        <S.GreenEllipse>
+          <MediaGreenEllipse />
+        </S.GreenEllipse>
+        <S.OrangeEllipse>
+          <MediaOrangeEllipse />
+        </S.OrangeEllipse>
+      </S.ImageWrapper>
+      <C.Divider height={150} />
+    </S.SectionWrapper>
   )
 }

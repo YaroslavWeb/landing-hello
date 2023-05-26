@@ -3,11 +3,13 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyles = createGlobalStyle`
   html,
   body {
+    overflow-x: hidden;
+
     min-height:  100vh;
     margin: 0;
     padding: 0;
 
-    font-family: SFProDisplay, sans-serif;
+    font-family: Inter, sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: ${({ theme }) => theme.palette.gray};
@@ -46,9 +48,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   button {
+    font-family: Inter, sans-serif;
     background-color: transparent;
     border: none;
     outline: none;
-    
   }
 `

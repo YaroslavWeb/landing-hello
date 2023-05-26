@@ -9,6 +9,7 @@ export enum E_MediaQuery {
 export const theme = {
   palette: {
     primary: '#005FF8',
+    primary_10: '#005FF81A',
 
     white: '#FFFFFF',
     black: '#050038',
